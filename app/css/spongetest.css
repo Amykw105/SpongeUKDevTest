@@ -191,15 +191,71 @@ strong {
  * Styles to make the boxes actually visible to start
  */
 #boxes {
-  padding: 40px;
+  padding: 70px;
+  position: relative;
+  direction: rtl; /** I'm sure this should be done with flexbox **/
+}
+#boxes::after{
+  content: 'Wrapper';
+  position: absolute;
+  bottom: -50px;
+  right: 0;
+  font-size: 1.5em;
+  background-color: #7B0051;
+  padding: 20px;
+  color: white;
 }
 
 #box-left {
-  height: 50px;
+  min-height: 50px;
+  vertical-align: middle;
+  width: 50%;
+  max-width: 100%;
+  display: inline-block;
+  order: 2;
+  position: relative;
+}
+#box-left::after{
+  content: 'Left';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5em;
+  color: white;
 }
 
 #box-right {
-  height: 50px;
+  min-height: 100%;
+  height: 100%;
+  min-width: 50px;
+  width: 50%;
+  display: inline-block;
+  order: 1;
+  padding-bottom: 50%;
+  vertical-align: middle;
+  position: relative;
+}
+#box-right::after{
+  content: 'Right';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5em;
+  color: white;
+}
+
+@media screen and (min-width: 460px){
+  #box-left{
+    max-width: 210px;
+    transform: translate(-25%, -0%);
+  }
+}
+@media screen and (min-width: 762px){
+  #box-left{
+    transform: translate(-0%, -0%);
+  }
 }
 
 /**
@@ -218,3 +274,5 @@ strong {
 .tab-content.current{
    display: block;
  }
+ 
+ 
