@@ -201,3 +201,20 @@ strong {
 #box-right {
   height: 50px;
 }
+
+/**
+ * Styles for the tabs
+ */
+ .tabs li{
+   cursor: pointer;
+   padding: 5px 10px;
+ }
+ .tab-content img{
+   max-width: 200px;
+ }
+ .tab-content{
+   display: none;
+ }
+.tab-content.current{
+   display: block;
+ }

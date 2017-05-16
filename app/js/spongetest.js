@@ -97,5 +97,14 @@ jQuery(
 						populateDocumentation();
 					}
 			);
+			
+			/**
+			 * jQuery tabs - add and remove class based on data-tab value
+			 */
+			$("ul.tabs li").click(function() {
+				var a = $(this).attr("data-tab");
+				$("ul.tabs li").removeClass("current"), $(".tab-content").removeClass("current"), $(this).addClass("current"), $("#" + a).addClass("current")
+			});
+		
 		}
 );
