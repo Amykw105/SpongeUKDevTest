@@ -85,6 +85,28 @@ jQuery(
 						return strHTMLStarsOut;
 					}
 			);
+			
+			/**
+			 * Populate the tabs
+			 */
+			var populateTabs = function() {
+				var strTabSource = $( '#tab-template' ).html(),
+						resTabsTemplate = Handlebars.compile( strTabSource ),
+						strTabsHTML = resTabsTemplate( resContent.getItem( 'tabs' ) );
+
+				$( '#tabs' ).append( strTabsHTML );
+			};
+			
+			/**
+			 * jQuery tabs - add and remove class based on data-tab value
+			 */
+			var activeTabs = function(){
+				$(".tab0").addClass('current'); 
+				$("ul.tabs li").click(function() {
+					var a = $(this).attr("data-tab");
+					$("ul.tabs li").removeClass("current"), $(".tab-content").removeClass("current"), $(this).addClass("current"), $("#" + a).addClass("current")
+				});
+			}
 
 			/**
 			 * When the content file is ready, actually populate the content
@@ -95,16 +117,13 @@ jQuery(
 						populateTasks();
 						populateContent();
 						populateDocumentation();
+						populateTabs();
+						activeTabs(); // Call the tab function above
 					}
 			);
 			
-			/**
-			 * jQuery tabs - add and remove class based on data-tab value
-			 */
-			$("ul.tabs li").click(function() {
-				var a = $(this).attr("data-tab");
-				$("ul.tabs li").removeClass("current"), $(".tab-content").removeClass("current"), $(this).addClass("current"), $("#" + a).addClass("current")
-			});
+
+
 		
 		}
 );

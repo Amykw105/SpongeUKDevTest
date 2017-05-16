@@ -27,28 +27,7 @@
 </div>
 <div class="grid-container">
   <section class="grid-50">
-    <ul class="tabs">
-      <li class="tab-link tab1 current" data-tab="tab1">
-          About Me
-      </li>
-      <li class="tab-link tab2" data-tab="tab2">
-        Photo
-      </li>
-      <li class="tab-link tab3" data-tab="tab3">
-        Links
-      </li>
-    </ul>
-    <div id="tab1" class="tab-content tab1 current">
-      I'm a front-end web developer based in Plymouth, originally from Totnes.<br/>I like HTML, SCSS and jQuery. I enjoy problem solving, writing organised code, social media and building projects from scratch. 
-    </div>
-    <div id="tab2" class="tab-content tab2">
-      <img src="https://avatars0.githubusercontent.com/u/16478000?v=3&s=460" alt="Photo of Amy Westlake"/>
-    </div>
-    <div id="tab3" class="tab-content tab3">
-      <p><b><a href="http://pontis.co.uk" target="_blank">Pontis.co.uk</a></b><br/>Built during previous employment, I like this website for its design lovely images. It's a static build from scratch, no CMS, using Elixir/Gulp to compile the assets.</p>
-      <p><b><a href="http://periniandperini.co.uk" target="_blank">PeriniandPerini.co.uk</a></b><br/>For the same client as above, this is a site I built on top of PHP/Laravel/Gulp. I like this one because it's clean, simple and quick to load. </p>
-      <p><b><a href="http://www.littleshopuktour.com" target="_blank">LittleShopUKTour.com</a></b><br/>Built during previous employment, I know this site doesn't have the best design (and is a really horrible colour) but I'm proud of it as it's built on top of a custom PHP/Laravel CMS that I built from scratch. It has features allowing the client to add tour dates, upload cast bios and photos and manage their own metadata. This was the first large CMS project that I took on and the client was very pleased with the simplicity of updating their own content.</p>
-    </div>
+    <div id="tabs"></div>
     <article id="content"></article>
     <noscript>
       <h1>You must enable JavaScript in order to view this page.</h1>
@@ -65,7 +44,18 @@
     </div>
   </footer>
 </div>
-
+<!-- Header tabs template -->
+<!-- This task took a litte longer than expected, couldn't get the JSON quite right. -->
+<script id="tab-template" type="text/x-handlebars-template">
+  <ul class="tabs">
+  {{#each tab}}
+      <li class="tab-link tab{{@index}}" data-tab="tab{{@index}}">{{{title}}}</li>
+  {{/each}}
+  </ul>
+    {{#each tab}}
+        <div id="tab{{@index}}" class="tab-content tab{{@index}}">{{{content}}}</div>
+    {{/each}}
+</script>
 <!-- Header Handlebars template -->
 <script id="header-template" type="text/x-handlebars-template">
   <div class="grid-60">
