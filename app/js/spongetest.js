@@ -122,7 +122,14 @@ jQuery(
 					}
 			);
 			
-
+			/**
+			* Going to skip Task 7 - Simplify JavaScript
+			* Not sure I'm confortable enough changing all the code, if I was to tackle it 
+			* I think it would require a single function that takes the parameters
+			* of the ID in the html and the array of code in the JSON.
+			* You would then call the function with the relevant parameters. 
+			* That's how I would attempt it.
+			**/
 
 		
 		}
