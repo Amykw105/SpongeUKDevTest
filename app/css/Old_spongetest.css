@@ -15,31 +15,30 @@
 
 =====================================================
  SPONGE UK DEVELOPER TEST
- Main SCSS
+ Main CSS
 =====================================================
 */
 
-$grey: #212D35;
-$red: #F9423A;
-$orange: #FFB400;
-$brown: #7E7772;
-
 body {
   min-width: 320px;
+
   font-family: "Roboto", serif;
-  color: $grey;
+  color: #212D35;
   font-weight: 300;
 }
 
 #header-wrapper {
   position: relative;
-  background: $red;
+
+  background: #F9423A;
+
   z-index: 2;
 }
 
   #header {
     padding-top: 60px;
     padding-bottom: 45px;
+
     color: #FFF;
   }
 
@@ -47,6 +46,7 @@ body {
     margin-right: auto;
     margin-bottom: 30px;
     margin-left: auto;
+
     display: block;
   }
 
@@ -72,9 +72,13 @@ body {
   padding-right: 20px;
   padding-bottom: 50px;
   padding-left: 20px;
+
   position: relative;
+
   background-color: #F2F2F2;
+
   counter-reset: tasks;
+
   z-index: 1;
 }
 
@@ -83,24 +87,30 @@ body {
   }
 
     #tasks article h5 {
-      color: $red;
+      color: #F9423A;
     }
 
     #tasks article h5::before {
       min-width: 0.75em;
       padding-right: 0.5em;
+
       display: inline-block;
-      color: $grey;
+
+      color: #212D35;
       font-weight: 300;
       vertical-align: text-bottom;
+
       content: counter(tasks) ".";
     }
 
     #tasks article h5 .difficulty {
       margin-left: 1.5em;
+
       display: inline-block;
+
       float: right;
-      color: $orange;
+
+      color: #FFB400;
       font-size: 0.8em;
       white-space: nowrap;
     }
@@ -110,15 +120,19 @@ body {
       }
 
       #tasks article h5 .difficulty .fa-star-o {
-        color: $brown;
+        color: #7E7772;
       }
 
 #footer-wrapper {
   padding-top: 30px;
   padding-bottom: 10px;
+
   position: relative;
+
   color: #FFF;
-  background-color: $grey;
+
+  background-color: #212D35;
+
   z-index: 2;
 }
 
@@ -140,7 +154,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: $red;
+  color: #F9423A;
 }
 
 p,
@@ -153,10 +167,13 @@ ol {
   li code {
     padding-right: 0.2em;
     padding-left: 0.2em;
+
     line-height: 1.35;
     vertical-align: baseline;
     font-size: 0.9em;
+
     background-color: #D4D4D4;
+
     outline: none;
   }
 
@@ -197,14 +214,6 @@ strong {
   display: inline-block;
   order: 2;
   position: relative;
-  // Moved media queries to keep styles together
-  @media screen and (min-width: 460px){
-      max-width: 210px;
-      transform: translate(-25%, -0%);
-  }
-  @media screen and (min-width: 762px){
-      transform: translate(-0%, -0%);
-  }
 }
 #box-left::after{
   content: 'Left';
@@ -237,9 +246,17 @@ strong {
   color: white;
 }
 
-
-
-
+@media screen and (min-width: 460px){
+  #box-left{
+    max-width: 210px;
+    transform: translate(-25%, -0%);
+  }
+}
+@media screen and (min-width: 762px){
+  #box-left{
+    transform: translate(-0%, -0%);
+  }
+}
 
 /**
  * Styles for the tabs
@@ -248,12 +265,14 @@ strong {
    cursor: pointer;
    padding: 5px 10px;
  }
+ .tab-content img{
+   max-width: 200px;
+ }
  .tab-content{
    display: none;
-   img{
-     max-width: 200px;
-   }
  }
 .tab-content.current{
    display: block;
  }
+ 
+ 
