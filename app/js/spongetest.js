@@ -130,7 +130,16 @@ jQuery(
 			* You would then call the function with the relevant parameters. 
 			* That's how I would attempt it.
 			**/
-
+			/** Went back and attempted this, can't quite get it there but this how I 
+			* think it would work
+			**/
+			//    populate = function(id, json, html){
+			// 	      var strTabSource = $(id).html(),
+			//	      resTabsTemplate = Handlebars.compile(strTabSource),
+			// 	      strTabsHTML = resTabsTemplate( resContent.getItem(json) );
+			// 	      $(html).append( strTabsHTML );
+			//    }
+			//    populate('#tab-template', 'tabs', '#tabs');
 		
 		}
 );
